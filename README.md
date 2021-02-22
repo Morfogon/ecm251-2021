@@ -2,9 +2,9 @@
 Repositório criado para gerenciar os projetos e aulas de Linguagens I.
 
 # Desenvolvedor:
-## Matheus Rossini de Souza
+- Matheus Rossini de Souza
 
-#Principais Linguagens:
+# Principais Linguagens:
 - Java
 - Python
 - C
