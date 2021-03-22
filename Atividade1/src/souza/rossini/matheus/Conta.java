@@ -27,7 +27,6 @@ public class Conta {
         return false;
     }
 
-
     public boolean transferirDinheiro(Conta destino, double valor) {
         if(this.sacar(valor)){
             destino.depositar(valor);
