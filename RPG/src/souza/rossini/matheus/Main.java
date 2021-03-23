@@ -5,7 +5,9 @@ public class Main {
     public static void main(String[] args) {
         Inimigo enemy = new Inimigo("Dragão", 50);
         Jogador player = new Jogador("Matheus", 50);
-        Combate duelo = new Combate(player, enemy);
+        System.out.println("CERTO DIA DETERMINADO PLAYER ESTAVA ANDANDO PELA FLORESTA QUANDO DE REPENTE...");
+        System.out.println(enemy.nome + "APARECE!");
+        new Combate(player, enemy);
     }
 
 

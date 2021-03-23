@@ -2,10 +2,11 @@ package souza.rossini.matheus;
 
 import java.util.Scanner;
 
-public class Combate {
-    private Scanner scanner;
+public class Combate{
+    public Scanner scanner;
     public Jogador player;
     public Inimigo npc;
+
 
     private void exibirMenu() {
         System.out.println("O que deseja fazer?");
@@ -14,8 +15,8 @@ public class Combate {
         System.out.println("0. Desistir");
     }
 
-    private void avaliarOpcao(int opcao) {
-        switch (opcao) {
+    public void avaliarOpcao(int numero) {
+        switch (numero) {
             case 0:                                     //sair
                 System.out.println(npc.nome + "venceu o combate!");
                 break;
@@ -24,20 +25,18 @@ public class Combate {
                 npc.vida -= 10;
                 System.out.println(player.nome + " deu 10 de dano");
                 break;
-            case 2:
+            case 2:                                     //Curar
                 if (player.vida < 50) {
                     player.vida += 5;
                 }
                 break;
-
-
         }
     }
 
     public Combate(Jogador player, Inimigo npc){
-        while (npc.vida < 0) {
+        while (npc.vida > 0) {
             exibirMenu();
-            int opcao = 1;
+            int opcao;
             this.scanner = new Scanner(System.in);
             opcao = scanner.nextInt();
             avaliarOpcao(opcao);
@@ -47,10 +46,10 @@ public class Combate {
 
 
 
-       // while(npc.vida > 0){
-          //  npc.vida -= 10;                  // toma o dano
-           // System.out.println(player.nome + " deu 10 de dano");         // printa o dano
-            //System.out.println(npc.vida);
+        // while(npc.vida > 0){
+        //  npc.vida -= 10;                  // toma o dano
+        // System.out.println(player.nome + " deu 10 de dano");         // printa o dano
+        //System.out.println(npc.vida);
 
 
 
@@ -60,17 +59,3 @@ public class Combate {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
