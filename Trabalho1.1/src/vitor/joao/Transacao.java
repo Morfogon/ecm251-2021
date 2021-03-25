@@ -9,6 +9,13 @@ public class Transacao {
     private double valor;
     private int id;
 
+    //construtor
+    public Transacao(double valor, int id) {
+        this.valor = valor;
+        this.id = id;
+
+    }
+
     private static int getRandomNumberInRange(int min, int max) {
         Random r = new Random();
         return r.nextInt((max - min) + 1) + min;

@@ -8,10 +8,10 @@ public class Conta {
     public int idConta;
 
     //construtor
-    public Conta(String nome, double saldoInicial, int idConta) {
+    public Conta(String nome, double saldoInicial, int idConta, String nome_Usuario, String senha, String email) {
         this.saldo = saldoInicial;
         this.idConta = idConta;
-        this.usuario = new Usuario(nome);
+        this.usuario = new Usuario(nome_Usuario, senha, email);
 
     }
 
@@ -30,15 +30,6 @@ public class Conta {
         return false;
     }
 
-    public boolean transferirDinheiro(Conta destino, double valor) {
-        if(this.Retirar(valor)){
-            destino.depositar(valor);
-            return true;
-        }
-        return false;
-    }
-
-
 
     public boolean Receber(double valor) {
         if(valor <= this.saldo){
@@ -48,14 +39,14 @@ public class Conta {
         return false;
     }
 
-    //public boolean FazerPagamento(Conta Pagador, Conta Recebedor , String QRCode) {
-
-     //   if(this.Retirar(valor)){                                               // se o valor a ser pago for menor do que o saldo da conta entao True
-     //       destino.depositar(valor);
-     //       return true;
-     //   }
-    //    return false;
-    //}
+    public boolean FazerPagamento(Conta Pagador, Conta Recebedor , String[] QRCode) {
+        int valor = (Integer.parseInt(QRCode[2]));
+        if(this.Retirar(valor)){                                               // se o valor a ser pago for menor do que o saldo da conta entao True
+            Recebedor.depositar(valor);
+            return true;
+        }
+        return false;
+    }
 
     public double getSaldo() {
         return this.saldo;
