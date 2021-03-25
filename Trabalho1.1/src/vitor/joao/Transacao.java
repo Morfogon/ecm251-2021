@@ -7,17 +7,17 @@ public class Transacao {
     private Usuario usuario;
     private Conta conta;
     private double valor;
+    private int id;
 
     private static int getRandomNumberInRange(int min, int max) {
         Random r = new Random();
         return r.nextInt((max - min) + 1) + min;
     }
-    int id = getRandomNumberInRange(5, 10);
 
-    public String gerarCode(Usuario usuario,Conta conta,double valor, int id){
-        String s = ((this.usuario).toString() + ';' + (this.conta).toString() + ';' + (this.valor) + ';' + (this.id));
-        String[] dados = s.split(";");
-        return dados[0];
+    public void gerarCode(Usuario usuario,Conta conta,double valor, int id){
+        int Rand = getRandomNumberInRange(1000, 9999);
+        String S = ((conta.idConta)+ ';' +(usuario.nome).toString() + ';' + valor+ ';' + Rand);
+        String[] dados = S.split(";");
     }
 
 }
