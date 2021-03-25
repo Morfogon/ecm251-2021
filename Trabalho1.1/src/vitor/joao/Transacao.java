@@ -1,5 +1,8 @@
 package vitor.joao;
 
+//joao vitor quirino sarti  Ra = 18.01224-8
+//mateus rossini Ra =
+
 import java.util.Random;
 
 public class Transacao {
@@ -21,10 +24,10 @@ public class Transacao {
         return r.nextInt((max - min) + 1) + min;
     }
 
-    public void gerarCode(Usuario usuario,Conta conta,double valor, int id){
+    public String gerarCode(Usuario usuario, Conta conta, double valor){
         int Rand = getRandomNumberInRange(1000, 9999);
-        String S = ((conta.idConta)+ ';' +(usuario.nome).toString() + ';' + valor+ ';' + Rand);
-        String[] dados = S.split(";");
+        return ((conta.idConta)+ ';' + (usuario.nome) + ';' + valor+ ';' + Rand);
+
     }
 
 }

@@ -1,5 +1,8 @@
 package vitor.joao;
 
+//joao vitor quirino sarti  Ra = 18.01224-8
+//mateus rossini Ra =
+
 public class Conta {
     //Atributos das classe
     private Usuario usuario;
@@ -39,8 +42,9 @@ public class Conta {
         return false;
     }
 
-    public boolean FazerPagamento(Conta Pagador, Conta Recebedor , String[] QRCode) {
-        int valor = (Integer.parseInt(QRCode[2]));
+    public boolean FazerPagamento(Conta Pagador, Conta Recebedor , String QRCode) {
+        String[] QR = QRCode.split(";");
+        int valor = (Integer.parseInt(QR[2]));
         if(this.Retirar(valor)){                                               // se o valor a ser pago for menor do que o saldo da conta entao True
             Recebedor.depositar(valor);
             return true;
@@ -51,8 +55,6 @@ public class Conta {
     public double getSaldo() {
         return this.saldo;
     }
-
-
 
 
 }
